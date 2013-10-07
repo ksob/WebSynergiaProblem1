@@ -1,5 +1,5 @@
 <%= form_for(:assignment, :url => assign_groups_path) do |f| %>
-	<%= select_tag 'user_id', options_for_select(@users.collect{ |u| [u.username, u.id] }) %>
+	<%= select_tag 'user_id', options_for_select(get_users_except_current.collect{ |u| [u.username, u.id] }) %>
 	<% for group in User.current_user.groups %>
 	<div>
 	  <%= check_box_tag "user[group_ids][]", group.id, true %>

@@ -7,6 +7,7 @@
 rake db:migrate
 
 * How to run the test suite
+RAILS_ENV=test rake db:migrate 
 bundle exec rspec
 
 * Seeding
@@ -15,3 +16,10 @@ rake db:seed
 Note: Seeding is needed to create users and groups.
 There is no other way to create those.
 
+* Running
+rails server
+
+Note: When you access localhost:3000 you will be presented with login page. Use the following credentials to log in:
+
+Email: e@e.com
+Password: asdf
