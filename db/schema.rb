@@ -14,13 +14,13 @@
 ActiveRecord::Schema.define(version: 20130924134228) do
 
   create_table "assignments", force: true do |t|
-    t.integer  "role_id"
+    t.integer  "group_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "roles", force: true do |t|
+  create_table "groups", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -8,9 +8,9 @@
   <td>
 	<%= user.username %>
   </td>
-	<% for role in user.roles %>
+	<% for group in user.groups %>
 		<td>
-		  <%= role.name %>
+		  <%= group.name %>
 		</td>
 	<% end %>
   </tr>

@@ -2,12 +2,12 @@ require 'spec_helper'
 
 describe "SelectGroups" do
   before do
-  	role = Role.create(name: 'Admin')
+  	group = Group.create(name: 'Admin')
 	user = User.create(email: 'e@e.com', username: 'myusername', password: 'asdf')
-	role.assignments.create(user: user, role: role)
-	role = Role.create(name: 'User')
-	user.assignments.create(user: user, role: role)
-	role = Role.create(name: 'Other')
+	group.assignments.create(user: user, group: group)
+	group = Group.create(name: 'User')
+	user.assignments.create(user: user, group: group)
+	group = Group.create(name: 'Other')
 	user = User.create(email: 'a@a.com', username: 'myusername2', password: 'asdf')
   end
 

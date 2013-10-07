@@ -1,11 +1,11 @@
 <%= form_for(:assignment, :url => assign_groups_path) do |f| %>
-	<%= select_tag 'user_id', options_for_select(User.all.collect{ |u| [u.username, u.id] }) %>
-	<% for role in User.current_user.roles %>
+	<%= select_tag 'user_id', options_for_select(@users.collect{ |u| [u.username, u.id] }) %>
+	<% for group in User.current_user.groups %>
 	<div>
-	  <%= check_box_tag "user[role_ids][]", role.id, true %>
-	  <%=h role.name %>
+	  <%= check_box_tag "user[group_ids][]", group.id, true %>
+	  <%=h group.name %>
 	</div>
 	<% end %>
-	<%= hidden_field_tag "user[role_ids][]", "" %>
+	<%= hidden_field_tag "user[group_ids][]", "" %>
 	<div><%= f.submit "Assign" %></div>
 <% end %>
