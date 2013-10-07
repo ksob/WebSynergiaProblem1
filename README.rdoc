@@ -1,28 +1,16 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version
-
-* System dependencies
-
-* Configuration
+2.0.0
 
 * Database creation
-
-* Database initialization
+rake db:migrate
 
 * How to run the test suite
+bundle exec rspec
 
-* Services (job queues, cache servers, search engines, etc.)
+* Seeding
+rake db:seed
+Note: Seeding is needed to create users and groups.
+There is no other way to create those.
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
