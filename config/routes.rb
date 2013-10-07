@@ -1,5 +1,5 @@
 Problem1::Application.routes.draw do
-  #match '/select_groups_to_assign', to: 'users#select_groups_to_assign',  via: 'get'
+  match '/select_groups_to_assign', to: 'users#select_groups_to_assign',  via: 'get'
   match '/assign_groups',  to: 'users#assign_groups',  via: 'post'
   #get "assign_groups" => "users#assign_groups", :as => "assign_groups"
   #get "log_in" => "users#log_in", :as => "log_in"
