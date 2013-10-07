@@ -1,6 +1,10 @@
 Problem1::Application.routes.draw do
-  get "assign_group" => "users#assign_group", :as => "assign_group"
+  #match '/select_groups_to_assign', to: 'users#select_groups_to_assign',  via: 'get'
+  match '/assign_groups',  to: 'users#assign_groups',  via: 'post'
+  #get "assign_groups" => "users#assign_groups", :as => "assign_groups"
   #get "log_in" => "users#log_in", :as => "log_in"
+  match '/log_in',  to: 'users#log_in',         via: 'get'
+  match '/check_log_in',  to: 'users#check_log_in',  via: 'post'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

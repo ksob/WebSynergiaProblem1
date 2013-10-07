@@ -1,10 +1,17 @@
 class UsersController < ApplicationController
-  def assign_group
-    @users = User.all
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml { render :xml => @users }
-      format.json{ render :json => @users }
+  def log_in
+
+  end
+
+  def check_log_in
+  	user = User.find_by(email: params[:user][:email])
+  	if user and user[:password] == params[:user][:password]
+ 	  @current_user = user
+  	  render 'select_groups_to_assign'
+    else
+      flash.now[:error] = 'Invalid email/password combination'
+      render 'log_in'
     end
   end
+
 end
