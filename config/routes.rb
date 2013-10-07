@@ -5,6 +5,11 @@ Problem1::Application.routes.draw do
   #get "log_in" => "users#log_in", :as => "log_in"
   match '/log_in',  to: 'users#log_in',         via: 'get'
   match '/check_log_in',  to: 'users#check_log_in',  via: 'post'
+  match '/users', to: 'users#index', via: 'get'
+
+  root 'users#log_in'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
