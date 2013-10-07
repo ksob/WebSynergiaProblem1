@@ -11,6 +11,7 @@ bundle exec rspec
 
 * Seeding
 rake db:seed
+
 Note: Seeding is needed to create users and groups.
 There is no other way to create those.
 
