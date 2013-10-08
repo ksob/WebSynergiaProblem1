@@ -2,13 +2,13 @@ require 'spec_helper'
 
 describe "SelectGroups" do
   before do
-  	group = Group.create(name: 'Admin')
-	user = User.create(email: 'e@e.com', username: 'myusername', password: 'asdf')
-	group.assignments.create(user: user, group: group)
-	group = Group.create(name: 'User')
-	user.assignments.create(user: user, group: group)
-	group = Group.create(name: 'Other')
-	user = User.create(email: 'a@a.com', username: 'myusername2', password: 'asdf')
+    group = Group.create(name: 'Admin')
+  	user = User.create(email: 'e@e.com', username: 'myusername', password: 'asdf')
+  	group.assignments.create(user: user, group: group)
+  	group = Group.create(name: 'User')
+  	user.assignments.create(user: user, group: group)
+  	group = Group.create(name: 'Other')
+  	user = User.create(email: 'a@a.com', username: 'myusername2', password: 'asdf')
     User.current_user = User.first
   end
 
@@ -18,7 +18,7 @@ describe "SelectGroups" do
       response.status.should be(200)
     end
 
-	it "displays usernames to select" do
+	  it "displays usernames to select" do
       visit select_groups_to_assign_path
       page.has_css?('select #user_id')
     end
